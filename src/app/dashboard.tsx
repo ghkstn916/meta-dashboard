@@ -20,49 +20,70 @@ const statusConfig = {
   done:   { label: "완료", dot: "bg-slate-400" },
 };
 
-function SubProjectList({ children, parentUrl }: { children: SubProject[]; parentUrl?: string }) {
+/* Sub-project card grid (shown when a folder project is opened) */
+function SubProjectGrid({ children, onBack, parentName }: { children: SubProject[]; onBack: () => void; parentName: string }) {
   return (
-    <div className="mt-3 space-y-1.5">
-      {children.map((child) => {
-        const href = child.url || parentUrl;
-        return (
-          <a
-            key={child.id}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#0f111a]/60 hover:bg-[#2a2d4e] transition group"
-          >
-            <svg className="w-4 h-4 text-slate-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <div className="min-w-0 flex-1">
-              <div className="text-sm text-slate-300 group-hover:text-white transition truncate">
-                {child.name}
+    <div className="min-h-screen bg-[#0f111a] text-slate-200 p-6 md:p-10">
+      <header className="text-center mb-8">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition mb-4 text-sm"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          전체 프로젝트로 돌아가기
+        </button>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-1">
+          {parentName}
+        </h1>
+        <p className="text-slate-400 text-sm">하위 프로젝트 {children.length}개</p>
+      </header>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
+        {children.map((child) => {
+          const tc = techColors[child.tech || ""] || defaultTech;
+          return (
+            <a
+              key={child.id}
+              href={child.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`bg-[#1a1d2e] border border-[#2a2d3e] rounded-2xl p-5 transition-all relative overflow-hidden border-t-[3px] ${tc.accent} hover:bg-[#222640] hover:-translate-y-0.5 hover:shadow-2xl cursor-pointer block`}
+            >
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-lg font-semibold text-white">{child.name}</h3>
+                {child.tech && (
+                  <span className={`text-[0.7rem] px-2.5 py-0.5 rounded-full font-semibold ${tc.bg} ${tc.text}`}>
+                    {child.tech}
+                  </span>
+                )}
               </div>
-              <div className="text-xs text-slate-500 truncate">{child.desc}</div>
-            </div>
-            {href && (
-              <svg className="w-3.5 h-3.5 text-slate-500 group-hover:text-purple-400 shrink-0 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            )}
-          </a>
-        );
-      })}
+              <p className="text-slate-400 text-sm leading-relaxed mb-3">{child.desc}</p>
+              {child.url && (
+                <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  <span className="truncate">{child.url.replace("https://", "")}</span>
+                </div>
+              )}
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
-  const [expanded, setExpanded] = useState(false);
+function ProjectCard({ project, onOpenFolder }: { project: Project; onOpenFolder: (p: Project) => void }) {
   const tc = techColors[project.tech] || defaultTech;
   const sc = statusConfig[project.status];
   const hasChildren = project.children && project.children.length > 0;
 
   const handleClick = () => {
     if (hasChildren) {
-      setExpanded(!expanded);
+      onOpenFolder(project);
     } else if (project.url) {
       window.open(project.url, "_blank");
     } else if (project.github) {
@@ -72,17 +93,14 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div
-      className={`bg-[#1a1d2e] border border-[#2a2d3e] rounded-2xl p-5 transition-all relative overflow-hidden border-t-[3px] ${tc.accent} hover:bg-[#222640] hover:-translate-y-0.5 hover:shadow-2xl ${hasChildren || project.url || project.github ? "cursor-pointer" : ""}`}
+      className={`bg-[#1a1d2e] border border-[#2a2d3e] rounded-2xl p-5 transition-all relative overflow-hidden border-t-[3px] ${tc.accent} hover:bg-[#222640] hover:-translate-y-0.5 hover:shadow-2xl cursor-pointer`}
       onClick={handleClick}
     >
       <div className="flex justify-between items-start mb-2">
         <div className="flex items-center gap-2">
           {hasChildren && (
-            <svg
-              className={`w-4 h-4 text-slate-400 transition-transform ${expanded ? "rotate-90" : ""}`}
-              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <svg className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
             </svg>
           )}
           <h3 className="text-lg font-semibold text-white">{project.name}</h3>
@@ -134,13 +152,9 @@ function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      {hasChildren && expanded && (
-        <SubProjectList children={project.children!} parentUrl={project.url} />
-      )}
-
       {hasChildren && (
         <div className="mt-2 text-xs text-slate-500">
-          {expanded ? "" : `하위 프로젝트 ${project.children!.length}개`}
+          하위 프로젝트 {project.children!.length}개
         </div>
       )}
     </div>
@@ -148,6 +162,8 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Dashboard({ projects }: { projects: Project[] }) {
+  const [openFolder, setOpenFolder] = useState<Project | null>(null);
+
   const total = projects.length;
   const active = projects.filter((p) => p.status === "active").length;
   const paused = projects.filter((p) => p.status === "paused").length;
@@ -162,6 +178,16 @@ export default function Dashboard({ projects }: { projects: Project[] }) {
     { key: "paused" as const, label: "보류" },
     { key: "done" as const, label: "완료" },
   ];
+
+  if (openFolder && openFolder.children) {
+    return (
+      <SubProjectGrid
+        children={openFolder.children}
+        parentName={openFolder.name}
+        onBack={() => setOpenFolder(null)}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#0f111a] text-slate-200 p-6 md:p-10">
@@ -210,7 +236,7 @@ export default function Dashboard({ projects }: { projects: Project[] }) {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
         {filtered.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} onOpenFolder={setOpenFolder} />
         ))}
       </div>
     </div>

@@ -14,10 +14,9 @@ export interface SubProject {
   id: string;
   name: string;
   desc: string;
+  tech?: string;
   url?: string;
 }
-
-const BASE = "https://hyehwalecture.vercel.app";
 
 export const projects: Project[] = [
   {
@@ -35,23 +34,22 @@ export const projects: Project[] = [
     desc: "혜화 수업 자료 및 학생 평가 도구 모음 (AI, 정보 교과)",
     tech: "HTML",
     tags: ["교육", "수업", "AI"],
-    url: BASE,
+    url: "https://hyehwalecture.vercel.app",
     github: "https://github.com/ghkstn916/hyehwa_lecture",
     status: "active",
     children: [
-      { id: "3-5homepage", name: "3-5 홈페이지", desc: "3학년 5반 학급 홈페이지", url: `${BASE}/3-5homepage` },
-      { id: "student-eval", name: "학생 평가", desc: "학생 평가 도구", url: `${BASE}/student-eval` },
-      { id: "260214-ai-evaluate", name: "AI 평가", desc: "AI 활용 평가 시스템", url: `${BASE}/260214-ai-evaluate` },
-      { id: "lesson-2026ai_ch1_2", name: "AI 1-2장", desc: "2026 AI 교과 1-2장 수업자료", url: `${BASE}/lesson-2026ai_ch1_2` },
-      { id: "lesson-2026ai_ch2_1", name: "AI 2-1장", desc: "2026 AI 교과 2-1장 수업자료", url: `${BASE}/lesson-2026ai_ch2_1` },
-      { id: "lesson-2026ai_ch2_2", name: "AI 2-2장", desc: "2026 AI 교과 2-2장 수업자료", url: `${BASE}/lesson-2026ai_ch2_2` },
-      { id: "lesson-2026infor_ch1", name: "정보 1장", desc: "2026 정보 교과 1장 수업자료", url: `${BASE}/lesson-2026infor_ch1` },
-      { id: "lesson-2026infor_ch2", name: "정보 2장", desc: "2026 정보 교과 2장 수업자료", url: `${BASE}/lesson-2026infor_ch2` },
-      { id: "lesson-2026infor_ch3", name: "정보 3장", desc: "2026 정보 교과 3장 수업자료", url: `${BASE}/lesson-2026infor_ch3` },
-      { id: "lesson-tokenizer", name: "토크나이저", desc: "토크나이저 실습 수업자료", url: `${BASE}/lesson-tokenizer` },
-      { id: "lesson-turing-test", name: "튜링 테스트", desc: "튜링 테스트 수업자료", url: `${BASE}/lesson-turing-test` },
-      { id: "lesson-word-embedding", name: "워드 임베딩", desc: "워드 임베딩 수업자료", url: `${BASE}/lesson-word-embedding` },
-      { id: "claude-install-guide", name: "Claude 설치 가이드", desc: "Claude Code 설치 안내", url: `${BASE}/claude-install-guide` },
+      { id: "3-5homepage", name: "3-5 홈페이지", desc: "3학년 5반 학급 홈페이지", tech: "React", url: "https://3-5homepage.vercel.app" },
+      { id: "student-eval", name: "학생 평가", desc: "학생 평가 도구", tech: "React", url: "https://student-eval-tau.vercel.app" },
+      { id: "lesson-2026ai_ch1_2", name: "AI 1-2장", desc: "2026 AI 교과 1-2장 수업자료", tech: "React", url: "https://lesson-2026aich12.vercel.app" },
+      { id: "lesson-2026ai_ch2_1", name: "AI 2-1장", desc: "2026 AI 교과 2-1장 수업자료", tech: "React", url: "https://lesson-2026aich21.vercel.app" },
+      { id: "lesson-2026ai_ch2_2", name: "AI 2-2장", desc: "2026 AI 교과 2-2장 수업자료", tech: "React", url: "https://lesson-2026aich22.vercel.app" },
+      { id: "lesson-2026infor_ch1", name: "정보 1장", desc: "2026 정보 교과 1장 수업자료", tech: "React", url: "https://lesson-2026inforch1.vercel.app" },
+      { id: "lesson-2026infor_ch2", name: "정보 2장", desc: "2026 정보 교과 2장 수업자료", tech: "React", url: "https://lesson-2026inforch2.vercel.app" },
+      { id: "lesson-2026infor_ch3", name: "정보 3장", desc: "2026 정보 교과 3장 수업자료", tech: "React", url: "https://lesson-2026inforch3.vercel.app" },
+      { id: "lesson-tokenizer", name: "토크나이저", desc: "토크나이저 실습 수업자료", tech: "React", url: "https://lesson-tokenizer.vercel.app" },
+      { id: "lesson-turing-test", name: "튜링 테스트", desc: "튜링 테스트 수업자료", tech: "React", url: "https://lesson-turing-test.vercel.app" },
+      { id: "lesson-word-embedding", name: "워드 임베딩", desc: "워드 임베딩 수업자료", tech: "React", url: "https://lesson-word-embedding.vercel.app" },
+      { id: "claude-install-guide", name: "Claude 설치 가이드", desc: "Claude Code 설치 안내", tech: "HTML", url: "https://claude-install-guide.vercel.app" },
     ],
   },
   {
