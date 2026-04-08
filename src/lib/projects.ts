@@ -80,13 +80,13 @@ export const projects: Project[] = [
     status: "paused",
   },
   {
-    id: "data-literacy-lab",
-    name: "데이터 리터러시 Lab",
-    desc: "데이터 리터러시 실습 프로젝트",
+    id: "hyehwa-datalab",
+    name: "혜화 데이터랩",
+    desc: "혜화 데이터 리터러시",
     tech: "React",
     tags: ["웹", "교육", "데이터"],
-    url: "https://data-literacy-lab.vercel.app",
-    github: "https://github.com/ghkstn916/data-literacy-lab",
+    url: "https://ghkstn916.github.io/hyehwa-datalab/",
+    github: "https://github.com/ghkstn916/hyehwa-datalab",
     status: "active",
   },
 ];
