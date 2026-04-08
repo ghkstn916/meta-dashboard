@@ -92,9 +92,9 @@ export const projects: Project[] = [
   {
     id: "teacher_prompt_cards",
     name: "선생님 프롬프트 카드",
-    desc: "Claude Code 연수용 교과별 프롬프트 카드 모음 (단일 HTML, 인쇄 가능)",
+    desc: "Claude Code 입문 가이드(설치·로그인·첫 프로젝트) + 8과목(국·수·영·과·사·미술·특수·공통) 프롬프트 카드 모음",
     tech: "HTML",
-    tags: ["연수", "교사", "자료"],
+    tags: ["연수", "교사", "입문", "프롬프트"],
     url: "https://teacherpromptcards.vercel.app",
     status: "active",
   },
