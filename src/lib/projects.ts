@@ -25,6 +25,7 @@ export const projects: Project[] = [
     desc: "Next.js 기반 온라인 저지(코딩 채점) 시스템",
     tech: "Next.js",
     tags: ["웹", "교육", "코딩"],
+    url: "https://online-judge-xi.vercel.app",
     github: "https://github.com/ghkstn916/online_judge",
     status: "active",
   },
