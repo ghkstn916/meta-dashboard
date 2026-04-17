@@ -108,4 +108,14 @@ export const projects: Project[] = [
     url: "https://teachergallery.vercel.app",
     status: "active",
   },
+  {
+    id: "my-notion",
+    name: "my-notion",
+    desc: "노션 스타일 개인 메모 앱 (웹 PWA + Expo 안드로이드 앱 동시 제공, Supabase 백엔드)",
+    tech: "Next.js + Expo",
+    tags: ["웹", "앱", "메모", "PWA", "안드로이드"],
+    url: "https://my-notion-drab.vercel.app",
+    github: "https://github.com/ghkstn916/my-notion",
+    status: "active",
+  },
 ];
