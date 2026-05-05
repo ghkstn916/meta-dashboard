@@ -44,6 +44,7 @@ export const projects: Project[] = [
       { id: "lesson-2026ai_ch1_2", name: "AI 1-2장", desc: "2026 AI 교과 1-2장 수업자료", tech: "React", url: "https://lesson-2026aich12.vercel.app" },
       { id: "lesson-2026ai_ch2_1", name: "AI 2-1장", desc: "2026 AI 교과 2-1장 수업자료", tech: "React", url: "https://lesson-2026aich21.vercel.app" },
       { id: "lesson-2026ai_ch2_2", name: "AI 2-2장", desc: "2026 AI 교과 2-2장 수업자료", tech: "React", url: "https://lesson-2026aich22.vercel.app" },
+      { id: "lesson-2026ai_ch3", name: "AI 3장", desc: "2026 AI 교과 3장 데이터와 기계학습 (5모듈 15레슨 통합)", tech: "React", url: "https://lesson-2026aich3.vercel.app" },
       { id: "lesson-2026infor_ch1", name: "정보 1장", desc: "2026 정보 교과 1장 수업자료", tech: "React", url: "https://lesson-2026inforch1.vercel.app" },
       { id: "lesson-2026infor_ch2", name: "정보 2장", desc: "2026 정보 교과 2장 수업자료", tech: "React", url: "https://lesson-2026inforch2.vercel.app" },
       { id: "lesson-2026infor_ch3", name: "정보 3장", desc: "2026 정보 교과 3장 수업자료", tech: "React", url: "https://lesson-2026inforch3.vercel.app" },
