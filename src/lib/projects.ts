@@ -116,6 +116,7 @@ export const projects: Project[] = [
     tech: "HTML",
     tags: ["연수", "교사", "API", "실습", "Claude"],
     url: "https://teacherapilab.vercel.app",
+    github: "https://github.com/ghkstn916/teacher_api_lab",
     status: "active",
   },
   {
