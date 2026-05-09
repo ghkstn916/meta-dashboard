@@ -110,6 +110,15 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    id: "teacher_api_lab",
+    name: "선생님 API 입문 & 실습",
+    desc: "API 개념 설명 + 6개 실제 API(강아지·이름→나이·공휴일·날씨·환율·국가)를 브라우저에서 바로 호출해보는 교사 연수 페이지",
+    tech: "HTML",
+    tags: ["연수", "교사", "API", "실습"],
+    url: "https://teacherapilab.vercel.app",
+    status: "active",
+  },
+  {
     id: "my-notion",
     name: "my-notion",
     desc: "노션 스타일 개인 메모 앱 (웹 PWA + Expo 안드로이드 앱 동시 제공, Supabase 백엔드)",
