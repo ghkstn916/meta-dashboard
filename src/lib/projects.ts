@@ -112,9 +112,9 @@ export const projects: Project[] = [
   {
     id: "teacher_api_lab",
     name: "선생님 API 입문 & 실습",
-    desc: "API 개념 설명 + 6개 실제 API(강아지·이름→나이·공휴일·날씨·환율·국가)를 브라우저에서 바로 호출해보는 교사 연수 페이지",
+    desc: "API 개념 + 키 두 종류(데이터/서비스) 설명 + 8개 실습(강아지·이름→나이·공휴일·날씨·환율·국가·NEIS 급식·Claude 챗봇)을 브라우저에서 바로 호출하는 교사 연수 페이지",
     tech: "HTML",
-    tags: ["연수", "교사", "API", "실습"],
+    tags: ["연수", "교사", "API", "실습", "Claude"],
     url: "https://teacherapilab.vercel.app",
     status: "active",
   },
