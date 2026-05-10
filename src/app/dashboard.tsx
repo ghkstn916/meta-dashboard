@@ -20,8 +20,48 @@ const statusConfig = {
   done:   { label: "완료", dot: "bg-slate-400" },
 };
 
+function SubCard({ child }: { child: SubProject }) {
+  const tc = techColors[child.tech || ""] || defaultTech;
+  return (
+    <a
+      href={child.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`bg-[#1a1d2e] border border-[#2a2d3e] rounded-2xl p-5 transition-all relative overflow-hidden border-t-[3px] ${tc.accent} hover:bg-[#222640] hover:-translate-y-0.5 hover:shadow-2xl cursor-pointer block`}
+    >
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="text-lg font-semibold text-white">{child.name}</h3>
+        {child.tech && (
+          <span className={`text-[0.7rem] px-2.5 py-0.5 rounded-full font-semibold ${tc.bg} ${tc.text}`}>
+            {child.tech}
+          </span>
+        )}
+      </div>
+      <p className="text-slate-400 text-sm leading-relaxed mb-3">{child.desc}</p>
+      {child.url && (
+        <div className="flex items-center gap-1.5 text-xs text-slate-500">
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+          <span className="truncate">{child.url.replace("https://", "")}</span>
+        </div>
+      )}
+    </a>
+  );
+}
+
 /* Sub-project card grid (shown when a folder project is opened) */
 function SubProjectGrid({ children, onBack, parentName }: { children: SubProject[]; onBack: () => void; parentName: string }) {
+  const hasGroups = children.some((c) => c.group);
+  const groups = new Map<string, SubProject[]>();
+  if (hasGroups) {
+    for (const c of children) {
+      const key = c.group || "기타";
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key)!.push(c);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#0f111a] text-slate-200 p-6 md:p-10">
       <header className="text-center mb-8">
@@ -40,38 +80,29 @@ function SubProjectGrid({ children, onBack, parentName }: { children: SubProject
         <p className="text-slate-400 text-sm">하위 프로젝트 {children.length}개</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
-        {children.map((child) => {
-          const tc = techColors[child.tech || ""] || defaultTech;
-          return (
-            <a
-              key={child.id}
-              href={child.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`bg-[#1a1d2e] border border-[#2a2d3e] rounded-2xl p-5 transition-all relative overflow-hidden border-t-[3px] ${tc.accent} hover:bg-[#222640] hover:-translate-y-0.5 hover:shadow-2xl cursor-pointer block`}
-            >
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="text-lg font-semibold text-white">{child.name}</h3>
-                {child.tech && (
-                  <span className={`text-[0.7rem] px-2.5 py-0.5 rounded-full font-semibold ${tc.bg} ${tc.text}`}>
-                    {child.tech}
-                  </span>
-                )}
+      {hasGroups ? (
+        <div className="max-w-[1200px] mx-auto space-y-10">
+          {Array.from(groups.entries()).map(([groupName, items]) => (
+            <section key={groupName}>
+              <div className="flex items-baseline gap-3 mb-4 border-b border-[#2a2d3e] pb-2">
+                <h2 className="text-xl font-semibold text-white">{groupName}</h2>
+                <span className="text-xs text-slate-500">{items.length}개</span>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed mb-3">{child.desc}</p>
-              {child.url && (
-                <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  <span className="truncate">{child.url.replace("https://", "")}</span>
-                </div>
-              )}
-            </a>
-          );
-        })}
-      </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                {items.map((child) => (
+                  <SubCard key={child.id} child={child} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-[1200px] mx-auto">
+          {children.map((child) => (
+            <SubCard key={child.id} child={child} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
