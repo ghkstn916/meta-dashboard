@@ -48,6 +48,7 @@ export const projects: Project[] = [
       { id: "lesson-2026ai_ch3_3", name: "AI 3-3장", desc: "2026 AI 교과 3-3장 — 이미지 임베딩 체험", tech: "React", url: "https://hyehwa-lesson-2026aich33.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026ai_ch3_4", name: "AI 3-4장", desc: "2026 AI 교과 3-4장 — k-NN 분류 시각 실험", tech: "React", url: "https://hyehwa-lesson-2026aich34.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026ai_ch3_5", name: "AI 3-5장", desc: "2026 AI 교과 3-5장 — MobileNet 분류 수행평가", tech: "React", url: "https://hyehwa-lesson-2026aich35.vercel.app", group: "인공지능 기초" },
+      { id: "lesson-2026ai_ch3_games", name: "AI 체험 게임", desc: "AI 기초 ch3 연계 체험형 게임 3종 — AI 가르치기·추천 알고리즘·프롬프트 챌린지", tech: "React", url: "https://lesson-2026aich3games.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026infor_ch1", name: "정보 1장", desc: "2026 정보 교과 1장 수업자료", tech: "React", url: "https://lesson-2026inforch1.vercel.app", group: "정보 수업" },
       { id: "lesson-2026infor_ch2", name: "정보 2장", desc: "2026 정보 교과 2장 수업자료", tech: "React", url: "https://lesson-2026inforch2.vercel.app", group: "정보 수업" },
       { id: "lesson-2026infor_ch3", name: "정보 3장", desc: "2026 정보 교과 3장 수업자료", tech: "React", url: "https://lesson-2026inforch3.vercel.app", group: "정보 수업" },
