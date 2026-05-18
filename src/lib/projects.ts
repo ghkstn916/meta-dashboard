@@ -50,6 +50,8 @@ export const projects: Project[] = [
       { id: "lesson-2026ai_ch3_5", name: "AI 3-5장", desc: "2026 AI 교과 3-5장 — MobileNet 분류 수행평가", tech: "React", url: "https://hyehwa-lesson-2026aich35.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026ai_ch3_games", name: "AI 체험 게임 (학생용)", desc: "AI 기초 1학기 후반부 12차시 — 지도학습부터 RAG·에이전틱 AI까지 (고3, 각 50분)", tech: "React", url: "https://lesson-2026aich3games.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026ai_ch3_assess", name: "수행평가 (교사용·비공개)", desc: "AI 기초 수행평가 2회 — 프롬프트 설계 + 에이전틱 AI 미니 프로젝트 (학생 비공개)", tech: "React", url: "https://lesson-2026aich3assess.vercel.app", group: "인공지능 기초" },
+      { id: "lesson-2026ai_ch3_playground", name: "AI Playground (학생 실습)", desc: "Claude API 직접 호출 5종 실습 — 프롬프트 4요소 분석/4기법 비교/페르소나/환각 실험", tech: "React", url: "https://lesson-2026aich3playground.vercel.app", group: "인공지능 기초" },
+      { id: "lesson-2026ai_ch3_api", name: "API 백엔드 (Playground용)", desc: "Claude API 키 안전 보관 + 학생 프록시 + 레이트 리밋. Next.js Vercel.", tech: "Next.js", url: "https://lesson-2026aich3api.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026infor_ch1", name: "정보 1장", desc: "2026 정보 교과 1장 수업자료", tech: "React", url: "https://lesson-2026inforch1.vercel.app", group: "정보 수업" },
       { id: "lesson-2026infor_ch2", name: "정보 2장", desc: "2026 정보 교과 2장 수업자료", tech: "React", url: "https://lesson-2026inforch2.vercel.app", group: "정보 수업" },
       { id: "lesson-2026infor_ch3", name: "정보 3장", desc: "2026 정보 교과 3장 수업자료", tech: "React", url: "https://lesson-2026inforch3.vercel.app", group: "정보 수업" },
