@@ -53,6 +53,7 @@ export const projects: Project[] = [
       { id: "lesson-2026ai_ch3_playground", name: "AI Playground (학생 실습)", desc: "Claude API 직접 호출 5종 실습 — 프롬프트 4요소 분석/4기법 비교/페르소나/환각 실험", tech: "React", url: "https://lesson-2026aich3playground.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026ai_ch3_api", name: "API 백엔드 (Playground·Arcade용)", desc: "Claude API 키 안전 보관 + 학생 프록시 + 레이트 리밋 + 게임 채점(judge/duel). Next.js Vercel.", tech: "Next.js", url: "https://lesson-2026aich3api.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026ai_ch3_arcade", name: "🎮 AI Arcade (학생 자율 게임)", desc: "5개 미니 게임으로 AI를 게임처럼 — 프롬프트 퍼즐·RPG·캐릭터 콜로세움·환각 탐정·프롬프트 배틀. 학생 자율학습/과제용.", tech: "React", url: "https://lesson-2026aich3arcade.vercel.app", group: "인공지능 기초" },
+      { id: "lesson-2026ai_ch4_ai_challenge", name: "AI 챌린지 8차시 (생성형+에이전틱)", desc: "고3 AI 기초 8차시 단원 — vpython fork에서 8개 모드 챌린지 플랫폼으로 재구조화. 워밍업·시각화·이미지·구조화·한계·도구·리액트·프로젝트 (1·2차시 가용).", tech: "React+Supabase", url: "https://lesson-2026aich4aichallenge.vercel.app", group: "인공지능 기초" },
       { id: "lesson-2026infor_ch1", name: "정보 1장", desc: "2026 정보 교과 1장 수업자료", tech: "React", url: "https://lesson-2026inforch1.vercel.app", group: "정보 수업" },
       { id: "lesson-2026infor_ch2", name: "정보 2장", desc: "2026 정보 교과 2장 수업자료", tech: "React", url: "https://lesson-2026inforch2.vercel.app", group: "정보 수업" },
       { id: "lesson-2026infor_ch3", name: "정보 3장", desc: "2026 정보 교과 3장 수업자료", tech: "React", url: "https://lesson-2026inforch3.vercel.app", group: "정보 수업" },
