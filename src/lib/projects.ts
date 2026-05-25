@@ -140,4 +140,13 @@ export const projects: Project[] = [
     github: "https://github.com/ghkstn916/my-notion",
     status: "active",
   },
+  {
+    id: "2026_grade3_univ",
+    name: "수시 입시 일정 관리",
+    desc: "고3 담임과 우리 반 학생 29명이 함께 쓰는 수시 입시 일정 관리 웹앱 — 공통 일정·NEIS 학사일정·개인 지원 대학 일정을 캘린더로, 수시 6장 카운터와 교사 대시보드 제공",
+    tech: "Next.js + Supabase",
+    tags: ["웹", "교육", "입시", "고3", "모바일"],
+    url: "https://2026grade3univ.vercel.app",
+    status: "active",
+  },
 ];
