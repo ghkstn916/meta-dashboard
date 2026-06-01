@@ -147,6 +147,7 @@ export const projects: Project[] = [
     tech: "Next.js + Supabase",
     tags: ["웹", "교육", "입시", "고3", "모바일"],
     url: "https://2026grade3univ.vercel.app",
+    github: "https://github.com/ghkstn916/2026_grade3_univ",
     status: "active",
   },
 ];
