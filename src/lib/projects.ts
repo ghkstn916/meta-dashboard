@@ -67,11 +67,11 @@ export const projects: Project[] = [
   },
   {
     id: "exam_schedule_app",
-    name: "모의고사 시간표",
-    desc: "Android 모의고사 시간표 앱",
-    tech: "Android",
-    tags: ["앱", "교육", "시간표"],
-    github: "https://github.com/ghkstn916/ExamScheduleApp",
+    name: "모의고사 시간표 전광판",
+    desc: "교실 전광판용 Android 앱 + 관리 웹앱. 학년별 시간표·필적확인란·학교코드(관리자)와 반별 응원문구·공지(담임)를 웹에서 고치면 교실 화면이 실시간 반영 (Supabase 백엔드, 오프라인 폴백)",
+    tech: "Android + Next.js + Supabase",
+    tags: ["앱", "웹", "교육", "시간표", "전광판"],
+    url: "https://examboard-admin.vercel.app",
     status: "active",
   },
   {
