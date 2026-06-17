@@ -150,4 +150,14 @@ export const projects: Project[] = [
     github: "https://github.com/ghkstn916/2026_grade3_univ",
     status: "active",
   },
+  {
+    id: "saengbu_analyzer",
+    name: "학생부 분석기",
+    desc: "학생부 PDF 업로드 → AI(Claude/GPT/Gemini)가 1·2학년 생기부를 분석해 3학년 1학기 수시 전략 리포트 작성 + 전문가 3인 교차검토 + DOCX 다운로드. 교사용·민감정보 주의(외부 AI 전송, 마스킹 권장)",
+    tech: "HTML",
+    tags: ["AI", "교육", "입시", "교사용", "수시"],
+    url: "https://saengbu-analyzer.vercel.app",
+    github: "https://github.com/ghkstn916/saengbu-analyzer",
+    status: "active",
+  },
 ];
