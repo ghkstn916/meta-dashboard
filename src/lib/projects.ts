@@ -160,4 +160,14 @@ export const projects: Project[] = [
     github: "https://github.com/ghkstn916/saengbu-analyzer",
     status: "active",
   },
+  {
+    id: "ai_submission_dashboard",
+    name: "AI 수업 제출 현황",
+    desc: "정보 3학년 AI 수업(ch1~ch3 차시·실습 스크린샷 + AI 챌린지)의 학생별 제출 현황을 학번 기준으로 통합한 대시보드 — 반 필터·학번/이름 검색·정렬·미제출만 보기·단원별 제출 매트릭스. Supabase ai2026/ai8 집계. 교사용·민감정보",
+    tech: "HTML",
+    tags: ["AI", "교육", "대시보드", "교사용", "제출현황"],
+    url: "https://ai-submission-dashboard.vercel.app",
+    github: "https://github.com/ghkstn916/ai-submission-dashboard",
+    status: "active",
+  },
 ];
