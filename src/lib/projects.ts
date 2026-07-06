@@ -151,6 +151,16 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    id: "saengbu_writer",
+    name: "생기부 기재 도우미",
+    desc: "학생 활동 메모 → 2026 기재요령(진로 500자·행특 300자 등 규정 내장)에 맞는 생기부 서술형 초안 생성. 초안 2개 비교·다듬기·학생별 저장, 엑셀 붙여넣기 일괄 생성, 글자수 게이지·금지어 검사. Claude/OpenAI 키 직접 입력(브라우저에만 저장)",
+    tech: "HTML",
+    tags: ["AI", "교육", "교사용", "생기부", "고3"],
+    url: "https://saengbu-writer.vercel.app",
+    github: "https://github.com/ghkstn916/saengbu-writer",
+    status: "active",
+  },
+  {
     id: "saengbu_analyzer",
     name: "학생부 분석기",
     desc: "학생부 PDF 업로드 → AI(Claude/GPT/Gemini)가 1·2학년 생기부를 분석해 3학년 1학기 수시 전략 리포트 작성 + 전문가 3인 교차검토 + DOCX 다운로드. 교사용·민감정보 주의(외부 AI 전송, 마스킹 권장)",
