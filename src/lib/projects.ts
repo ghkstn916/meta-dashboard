@@ -184,7 +184,7 @@ export const projects: Project[] = [
   {
     id: "activity_dashboard_2026",
     name: "2026 수업 활동 통합 대시보드",
-    desc: "2학년 정보(컴퓨팅시스템·데이터·디지털시민·코딩교실)와 3학년 AI(도입수업·ch1~ch3·실습·AI챌린지 6차시)의 모든 학생 활동을 학번 기준으로 한 페이지에 통합 — evaluation 명단(2학년 59명·3학년 43명)을 분모로 미참여 학생까지 표시, 학년 전환·반 필터·항목별 제출률·학생 클릭 상세(형성평가 점수·서술형·실습 스크린샷·챌린지 소감). Excel 9시트 병행 다운로드. Supabase info2026/ai2026/ai8/lessons/online_judge/evaluation 집계. 교사용·민감정보",
+    desc: "2학년 정보(컴퓨팅시스템·데이터·디지털시민·코딩교실)와 3학년 AI(도입수업·ch1~ch3·실습·AI챌린지)의 모든 학생 활동을 학번 기준으로 한 페이지에 통합. 두 가지 뷰 — 📊 제출 현황(evaluation 명단 59/43명 분모, 미참여 학생까지 학생×활동 매트릭스·반 필터·제출률) / 📝 작성 내용(활동별로 전체 학생의 실제 작성물을 한눈에: 진로서술·서술형창작·코딩 파이썬 코드·AI챌린지 프롬프트/기획서/소감, 학생 클릭 시 전 과목 모달). Excel 10시트 병행. Supabase info2026/ai2026/ai8/lessons/online_judge/evaluation 집계. 교사용·민감정보",
     tech: "HTML",
     tags: ["AI", "정보", "교육", "대시보드", "교사용", "제출현황"],
     url: "https://activity-dashboard-2026.vercel.app",
