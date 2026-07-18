@@ -122,6 +122,15 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    id: "hyehwa_explorer",
+    name: "혜화 탐험",
+    desc: "2026 교실배치도로 만든 교내 탐방 웹 게임 — 본관 5개 층·별관·체육관을 돌아다니며 스탬프 12개 모으기 (방향키/터치 이동, 층간 계단 이동)",
+    tech: "HTML",
+    tags: ["게임", "학생", "학교안내", "Canvas"],
+    url: "https://hyehwa-explorer.vercel.app",
+    status: "active",
+  },
+  {
     id: "teacher_api_lab",
     name: "선생님 API 입문 & 실습",
     desc: "API 개념 + 키 두 종류(데이터/서비스) 설명 + 8개 실습(강아지·이름→나이·공휴일·날씨·환율·국가·NEIS 급식·Claude 챗봇)을 브라우저에서 바로 호출하는 교사 연수 페이지",
