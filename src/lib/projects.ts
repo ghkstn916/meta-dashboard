@@ -191,6 +191,16 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    id: "teachercall",
+    name: "교무실 교사 호출 시스템",
+    desc: "교무실 앞 터치스크린에서 학생이 교사 재석 상태(좌석 배치도)를 확인하고 호출 → 교사 PC 브라우저에 알림(팝업+소리) → 빠른 응답이 학생 화면에 회신. 부재중 메시지·담임 찾기·장난호출 제한·관리자(명단/좌석/설정/로그 CSV). Supabase teachercall 스키마",
+    tech: "React + Vite + Supabase",
+    tags: ["웹", "학교운영", "키오스크", "교무실", "실시간"],
+    url: "https://teachercall.vercel.app",
+    github: "https://github.com/ghkstn916/teachercall",
+    status: "active",
+  },
+  {
     id: "activity_dashboard_2026",
     name: "2026 수업 활동 통합 대시보드",
     desc: "2학년 정보(컴퓨팅시스템·데이터·디지털시민·코딩교실)와 3학년 AI(도입수업·ch1~ch3·실습·AI챌린지)의 모든 학생 활동을 학번 기준으로 한 페이지에 통합. 두 가지 뷰 — 📊 제출 현황(evaluation 명단 59/43명 분모, 미참여 학생까지 학생×활동 매트릭스·반 필터·제출률) / 📝 작성 내용(활동별로 전체 학생의 실제 작성물을 한눈에: 진로서술·서술형창작·코딩 파이썬 코드·AI챌린지 프롬프트/기획서/소감, 학생 클릭 시 전 과목 모달). Excel 10시트 병행. Supabase info2026/ai2026/ai8/lessons/online_judge/evaluation 집계. 교사용·민감정보",
