@@ -212,4 +212,14 @@ export const projects: Project[] = [
     github: "https://github.com/ghkstn916/activity-dashboard-2026",
     status: "active",
   },
+  {
+    id: "susi_calendar",
+    name: "수시 일정 캘린더",
+    desc: "담임용. 수시 지원결과 표(xls)와 나이스 대입전형자료 반별 제공현황(xlsx)을 브라우저에 올리면 전형일·1단계 발표·최종 발표를 월별 달력으로 보여 주고, 지원 건마다 수험번호를 자동 매칭해 달력·일정표에서 바로 확인·복사. 매칭 탭에서 애매한 건 직접 지정. 파일은 브라우저 안에서만 처리(서버 전송 없음), 다른 반 담임에게 공유용",
+    tech: "HTML + SheetJS",
+    tags: ["웹", "학교운영", "담임", "입시", "교사용"],
+    url: "https://susi-calendar.vercel.app",
+    github: "https://github.com/ghkstn916/susi-calendar",
+    status: "active",
+  },
 ];
