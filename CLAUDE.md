@@ -18,8 +18,8 @@
 3. `git add src/lib/projects.ts && git commit -m "..." && git push`
 4. **반드시 CLI로 재배포까지 수행한다.**
    ```bash
-   cd C:/Users/ghkst/desktop/claude/meta-dashboard
-   vercel deploy --prod --yes
+   # 이 저장소(meta-dashboard) 루트에서 실행. 다른 프로젝트 폴더에 있다면 먼저 cd ../meta-dashboard
+   vercel deploy --prod --yes --scope ghkstn916s-projects
    ```
    GitHub 자동 배포에 의존하지 말 것 — 이전에 연결 또는 캐시 문제로 반영이 누락된 사례가 있다.
 
